@@ -45,7 +45,7 @@ def run():
     engine = create_engine(f'postgresql+psycopg://{pg_user}:{pg_password}@{pg_host}:{pg_port}/{pg_database}')
 
     df_iter = pd.read_csv( 
-        prefix + 'yellow_tripdata_2021-01.csv.gz',
+        prefix + f'yellow_tripdata_{year}-{month:02d}.csv.gz',
         dtype=dtype,
         parse_dates=parse_dates,
         iterator=True,
